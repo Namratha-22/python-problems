@@ -1,0 +1,20 @@
+You are given a space separated list of integers.
+If all the integers are positive, then you need to check if any integer is a palindromic integer.
+
+
+n = input()
+s = list(map(int,input().split()))
+
+if all(map(lambda x: x>0, s)):
+    print(any(map(lambda x: str(x) == str(x)[::-1], s)))
+else:
+    print(False)
+    
+    
+    
+Sample Input
+5
+12 9 61 5 14 
+
+Sample Output
+True
