@@ -1,0 +1,32 @@
+ABCXYZ company has up to  employees.
+The company decides to create a unique identification number (UID) for each of its employees.
+The company has assigned you the task of validating all the randomly generated UIDs.
+
+A valid UID must follow the rules below:
+
+It must contain at least  uppercase English alphabet characters.
+It must contain at least  digits ( - ).
+It should only contain alphanumeric characters ( - ,  -  &  - ).
+No character should repeat.
+There must be exactly  characters in a valid UID.
+
+
+n=int(input())
+lst=[]
+for i in range(n):
+    a=input()
+    if (sum(i.isupper() for i in a)>1) and (sum(i.isdigit() for i in a)>2) and (a.isalnum()) and (len(a)==len(set(a))==10):
+        print("Valid")
+    else:
+        print("Invalid")
+        
+        
+Sample Input
+
+2
+B1CD102354
+B1CDEF2354
+Sample Output
+
+Invalid
+Valid
