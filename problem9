@@ -1,0 +1,48 @@
+You are given a date. Your task is to find what the day is on that date.
+
+Sample Input
+08 05 2015
+
+Sample Output
+WEDNESDAY
+
+import calendar
+from datetime import date 
+day = {0:'MONDAY', 1:'TUESDAY', 2:'WEDNESDAY', 3:'THURSDAY', 4:'FRIDAY', 5:'SATURDAY', 6:'SUNDAY'}
+
+m,d,y = map(int,input().split())
+
+print (day[calendar.weekday(y,m,d)])
+
+
+
+
+
+
+
+Dr. John Wesley has a spreadsheet containing a list of student.
+Your task is to help Dr. Wesley calculate the average marks of the students.
+
+Input Format
+The first line contains an integer , the total number of students.
+The second line contains the names of the columns in any order.
+The next  lines contains the , ,  and , under their respective column names.
+
+
+Sample Input
+5
+ID         MARKS      NAME       CLASS     
+1          97         Raymond    7         
+2          50         Steven     4         
+3          91         Adrian     9         
+4          72         Stewart    5         
+5          80         Peter      6 
+
+Sample Output
+78.00
+
+
+from collections import namedtuple
+N = int(input())
+student = namedtuple('student',input().strip().split())
+print(sum(float(student(*input().strip().split()).MARKS) for _ in range(N))/N)
